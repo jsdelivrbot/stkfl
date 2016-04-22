@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLUOR STICKFILE</title>
+    <script>
+        var gulp = require('gulp');
+        gulp.task('reload', function () {
+        if (location) location.reload();
+        });
+
+        gulp.watch('./', ['reload']);
+        gulp.watch('./elements', ['reload']);
+        
+        
+    </script>
+    <script src="./js/index.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    
+    <link rel="import" href="elements/menuleft-element.html">
+    <link rel="import" href="elements/mainframe-element.html">
+    <link rel="import" href="elements/wrapper-element.html">
+    
+    <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+    <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+</head>
+    <style is="custom-style" include="iron-flex iron-flex-alignment">
+        html, body {
+            height: 100%;
+            margin: 0px;
+            padding:0px;
+            background-color:lightblue;
+        }
+    </style>
+
+<body class="layout fullbleed">
+        <wrapper-element></wrapper-element>
+</body>
+</html>

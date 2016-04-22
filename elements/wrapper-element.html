@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+    <link rel="import" href="../elements/mainframe-element.html">
+    <link rel="import" href="../elements/menuleft-element.html">
+</head>
+
+<body>
+    <dom-module id="wrapper-element">
+        <template>
+            <style include="iron-flex iron-flex-alignment">
+                .container {
+                    height: 100%;
+                    width: 100%;
+                    background-color: azure;
+                }
+                .leftbar {
+                    height: 100%;
+                    width: 0px;
+                }
+                .maincontent {
+                    height: 100%;
+                    width:60%;
+                    overflow: hidden;
+                    background-color: bisque;
+                }
+            </style>
+            <div class="layout horizontal container">
+                <menuleft-element class="leftbar"></menuleft-element>
+                <mainframe-element class="maincontent flex"></mainframe-element>
+            </div>
+        </template>
+        <script>
+            Polymer({
+                is : 'wrapper-element',
+                ready : function(){
+                    
+                }
+            });
+        </script>
+    </dom-module>
+</body>
+    
+
+</html>

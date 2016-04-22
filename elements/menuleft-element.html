@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+    <link rel="import" href="../bower_components/file-tree/file-tree.html">
+    <link rel="import" href="../bower_components/file-tree/file-folder.html">
+    <link rel="import" href="../bower_components/paper-material/paper-material.html">
+    <link rel="import" href="../bower_components/sm3-resizable/sm3-resizable.html">
+    <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+</head>
+
+<body>
+    <dom-module id="menuleft-element">
+        <template>
+            <style include="iron-flex iron-flex-alignment">
+                .outer {
+                    height: 100%;
+                    width: auto;
+                }
+                .inner {
+                    width:auto;
+                    min-width:10px;
+                    height: auto;
+                    padding: 10px;
+                    margin:5px;
+                }
+                .toolbar {
+                    width:40px;
+                    min-width:10px;
+                    margin: 5px;
+                    height:auto;
+                }
+                .resizable {
+                    width:500px;
+                    min-width: 200px;
+                    max-width: 800px;
+                    height:100%;
+                }
+                .showmenu{
+                    overflow: hidden;
+                }
+                .showmenu.open{
+                    margin-top: 0px;
+                    transition: margin-top 0.1s cubic-bezier(.4,.86,.07,.99);
+                    -webkit-transition: margin-top 0.5s cubic-bezier(.4,.86,.07,.99);
+                }
+                .showmenu.closed{
+                    margin-top: -120%;
+                    transition: margin-top 0.1s cubic-bezier(.4,.86,.07,.99);
+                    -webkit-transition: margin-top 0.5s cubic-bezier(.4,.86,.07,.99);
+                }
+                .filler {
+                    height:50px;
+                    width: 50px;
+                }
+                paper-material {
+                    background-color: aliceblue;
+                }
+                sm3-resizable {
+                    --sm3-resizable-handle-e-size:25px;
+                }
+                paper-icon-button {
+                    background-color: salmon;
+                }
+            </style>
+            
+            <div class$="outer {{menuState}}">
+                <sm3-resizable id="resizer" handle-e class="resizable" >
+                    <div class="filler"></div>
+                    <paper-material id="toolbar" class="toolbar layout horizontal">
+                        
+                        <paper-icon-button icon="{{buttonState}}" class="right-justified" on-tap="toggleMenu"></paper-icon-button>
+                        <!--<future-search-tool></future-search-tool>-->
+                    </paper-material>
+                    
+                    <paper-material id="menu" class$="inner showmenu {{menuState}}">
+                        <template is="dom-repeat" items="{{categories}}">
+                            <file-folder data="{{item}}"></file-folder>
+                        </template>
+                    </paper-material>
+                </sm3-
+            </div>
+        </template>
+        <script>
+            Polymer({
+                is : 'menuleft-element',
+                ready : function(){
+                    this.menuOpen = true;
+                    this.menuState = "open";
+                    this.buttonState = "expand-less";
+                    
+                    this.categories = [
+                        {name:"Standards",
+                        children:[
+                            {name:"1C1"},
+                            {name:"1C1"},
+                            {name:"1C1"},
+                            {name:"1C1"}
+                        ]},
+                        {name:"Civil"},
+                        {name:"Structural"},
+                        {name:"Architectural"}
+                    ]
+                    
+                    this.treedata = {
+                        name:"asd"
+                    }
+                    
+                    this.folderdata = {
+                        name:"asdf",
+                        children:[]
+                    };
+                },
+                toggleMenu : function(){
+                    if(this.menuOpen){
+                        this.menuOpen = false;
+                        this.menuState = "closed";
+                        this.buttonState = "expand-more";
+                    }else{
+                        this.menuOpen = true;
+                        this.menuState = "open";
+                        this.buttonState = "expand-less";
+                    }
+                    
+                }
+            });
+        </script>
+    </dom-module>
+</body>
+</html>

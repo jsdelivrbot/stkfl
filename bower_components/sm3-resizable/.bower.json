@@ -1,0 +1,40 @@
+{
+  "name": "sm3-resizable",
+  "authors": [
+    "Mike Stevens <slaymaster3000@gmail.com>"
+  ],
+  "description": "An element that can be resized by dragging at its edges.",
+  "keywords": [
+    "web-components",
+    "web-component",
+    "polymer",
+    "resizable",
+    "resize"
+  ],
+  "main": "sm3-resizable.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/slaymaster3000/sm3-resizable/",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
+    "web-component-tester": "*"
+  },
+  "version": "1.0.1",
+  "_release": "1.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.1",
+    "commit": "a3feffb54a47ad9e95c952fcda43cf75e06def7b"
+  },
+  "_source": "https://github.com/slaymaster3000/sm3-resizable.git",
+  "_target": "^1.0.1",
+  "_originalSource": "sm3-resizable",
+  "_direct": true
+}

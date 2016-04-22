@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="../bower_components/file-tree/file-tree.html">
+    <link rel="import" href="../bower_components/file-tree/file-folder.html">
+    <link rel="import" href="../bower_components/file-tree/file-folder.html">
+    <link rel="import" href="../bower_components/sm3-resizable/sm3-resizable.html">
+    <link rel="import" href="../bower_components/pdf-object/pdf-object.html">
+</head>
+
+<body>
+    <dom-module id="mainframe-element">
+        <template>
+            <style>
+                .outer {
+                    height: 100%;
+                }
+                .frame {
+                    height: 100%;
+                    width: 100%;
+                }
+            </style>
+            <div class="outer">
+                <pdf-object file="http://www.polyu.edu.hk/iaee/files/pdf-sample.pdf" height="100%"></pdf-object>
+            </div>
+            
+        </template>
+        <script>
+            Polymer({
+                is : 'mainframe-element',
+                ready : function(){
+                    
+                }
+            });
+        </script>
+    </dom-module>
+</body>
+</html>
